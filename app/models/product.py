@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DECIMAL
+from sqlalchemy import Column, Integer, String, DECIMAL, TIMESTAMP
 from app.database import Base
 
 class Product(Base):
@@ -11,3 +11,5 @@ class Product(Base):
     precio = Column(DECIMAL(10,2), nullable=False)
     proveedor_id = Column(Integer, nullable=False)
     proveedor_nombre = Column(String(255), nullable=True)  # Se almacena el nombre del proveedor
+    created_at = Column(TIMESTAMP, server_default="CURRENT_TIMESTAMP")
+    updated_at = Column(TIMESTAMP, server_default="CURRENT_TIMESTAMP", onupdate="CURRENT_TIMESTAMP")
