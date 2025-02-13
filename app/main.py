@@ -23,4 +23,4 @@ app.include_router(router)
 
 @app.get("/")
 def root():
-    return {"message": "ReadProduct API is running!"}
+    return {"message": "ReadProduct API uwu is running!"}
